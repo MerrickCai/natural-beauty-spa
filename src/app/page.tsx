@@ -284,13 +284,22 @@ export default function Home() {
               Book your appointment today and step into a world of relaxation,
               rejuvenation, and natural beauty.
             </p>
-            <Link
-              href="/booking"
-              className="inline-flex items-center justify-center gap-2 bg-white text-primary px-8 py-4 rounded-full text-base font-semibold hover:bg-accent transition-colors"
-            >
-              Book Now
-              <ArrowRightIcon size={20} />
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/booking"
+                className="inline-flex items-center justify-center gap-2 bg-white text-primary px-8 py-4 rounded-full text-base font-semibold hover:bg-accent transition-colors"
+              >
+                Book Now
+                <ArrowRightIcon size={20} />
+              </Link>
+              <Link
+                href="/gift-cards"
+                className="inline-flex items-center justify-center gap-2 border-2 border-white text-white px-8 py-4 rounded-full text-base font-semibold hover:bg-white hover:text-primary transition-colors"
+              >
+                Gift Cards
+                <ArrowRightIcon size={20} />
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>
