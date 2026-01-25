@@ -1,5 +1,6 @@
 import {
   ClockIcon,
+  EnvelopeIcon,
   FacebookLogoIcon,
   InstagramLogoIcon,
   MapPinIcon,
@@ -7,12 +8,15 @@ import {
 } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 import Link from "next/link";
+import { siteConfig } from "@/data/site";
 
 const quickLinks = [
   { href: "/services", label: "Our Services" },
   { href: "/products", label: "Products" },
   { href: "/gallery", label: "Gallery" },
   { href: "/videos", label: "Videos" },
+  { href: "/about", label: "About Us" },
+  { href: "/gift-cards", label: "Gift Cards" },
   { href: "/booking", label: "Book Appointment" },
   { href: "/contact", label: "Contact Us" },
 ];
@@ -61,24 +65,31 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">Contact</h4>
             <div className="flex flex-col gap-3 text-sm text-white/70">
               <a
-                href="tel:425-526-3777"
+                href={`tel:${siteConfig.phone}`}
                 className="flex items-center gap-2 hover:text-white transition-colors"
               >
                 <PhoneIcon size={18} className="text-accent" />
-                <span>425-526-3777</span>
+                <span>{siteConfig.phone}</span>
               </a>
               <a
-                href="https://maps.google.com/?q=1433+130th+Ave+NE,+Bellevue,+WA+98005"
+                href={`mailto:${siteConfig.email}`}
+                className="flex items-center gap-2 hover:text-white transition-colors"
+              >
+                <EnvelopeIcon size={18} className="text-accent" />
+                <span>{siteConfig.email}</span>
+              </a>
+              <a
+                href={siteConfig.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start gap-2 hover:text-white transition-colors"
               >
                 <MapPinIcon size={18} className="text-accent shrink-0 mt-0.5" />
-                <span>1433 130th Ave NE, Bellevue, WA 98005</span>
+                <span>{siteConfig.address}</span>
               </a>
               <div className="flex items-center gap-2">
                 <ClockIcon size={18} className="text-accent" />
-                <span>9:30 AM – 8:00 PM</span>
+                <span>{siteConfig.hours}</span>
               </div>
             </div>
           </div>
@@ -88,7 +99,7 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">Follow Us</h4>
             <div className="flex gap-4">
               <a
-                href="https://www.instagram.com/naturalbeauty42780/"
+                href={siteConfig.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
@@ -97,7 +108,7 @@ export default function Footer() {
                 <InstagramLogoIcon size={20} />
               </a>
               <a
-                href="https://www.facebook.com/people/Natural-Beauty-Spa/61585477498250/"
+                href={siteConfig.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
