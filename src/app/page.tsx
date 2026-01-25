@@ -13,6 +13,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { products } from "@/data/products";
 import { serviceCategories } from "@/data/services";
+import { siteConfig } from "@/data/site";
 import { blurDataURL } from "@/lib/placeholder";
 
 const features = [
@@ -64,8 +65,8 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             <Image
-              src="/logos/Natural Beauty Spa Logo.svg"
-              alt="Natural Beauty Spa"
+              src={siteConfig.logo}
+              alt={siteConfig.name}
               width={120}
               height={120}
               className="mx-auto mb-6"

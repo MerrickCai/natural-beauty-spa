@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { siteConfig } from "@/data/site";
 
 const navLinks = [
   { href: "/services", label: "Services" },
@@ -28,14 +29,14 @@ export default function Header() {
           <div className="flex items-center justify-between h-full">
             <Link href="/" className="flex items-center gap-3">
               <Image
-                src="/logos/Natural Beauty Spa Logo.svg"
-                alt="Natural Beauty Spa"
+                src={siteConfig.logo}
+                alt={siteConfig.name}
                 width={48}
                 height={48}
                 className="w-12 h-12"
               />
               <span className="text-xl font-semibold text-primary hidden sm:block">
-                Natural Beauty Spa
+                {siteConfig.name}
               </span>
             </Link>
 

@@ -30,13 +30,13 @@ export default function Footer() {
           <div>
             <Link href="/" className="flex items-center gap-3 mb-4">
               <Image
-                src="/logos/Natural Beauty Spa Logo.svg"
-                alt="Natural Beauty Spa"
+                src={siteConfig.logo}
+                alt={siteConfig.name}
                 width={40}
                 height={40}
                 className="w-10 h-10 brightness-0 invert"
               />
-              <span className="text-lg font-semibold">Natural Beauty Spa</span>
+              <span className="text-lg font-semibold">{siteConfig.name}</span>
             </Link>
             <p className="text-white/70 text-sm leading-relaxed">
               Experience the art of relaxation and rejuvenation in the heart of

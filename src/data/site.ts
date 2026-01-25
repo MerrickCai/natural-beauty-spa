@@ -4,6 +4,7 @@ export const siteConfig = {
   description:
     "Experience luxury spa treatments including HydraFacial, facial cleansing, body massage, and more at Natural Beauty Spa in Bellevue, WA.",
   url: "https://naturalbeautyspawa.com",
+  logo: "/logos/Natural Beauty Spa Logo.svg",
 
   // Contact
   phone: "425-526-3777",

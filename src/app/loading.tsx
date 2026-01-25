@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { siteConfig } from "@/data/site";
 
 export default function Loading() {
   return (
@@ -8,7 +9,7 @@ export default function Loading() {
         <div className="relative">
           <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl animate-pulse" />
           <Image
-            src="/logos/Natural Beauty Spa Logo.svg"
+            src={siteConfig.logo}
             alt="Loading"
             width={120}
             height={120}
