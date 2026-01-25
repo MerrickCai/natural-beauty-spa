@@ -11,11 +11,14 @@ import {
   galleryImages,
 } from "@/data/gallery";
 import { blurDataURL } from "@/lib/placeholder";
+import Lightbox from "@/components/Lightbox";
 
 type Category = GalleryImage["category"] | "all";
 
 export default function GalleryPage() {
   const [activeCategory, setActiveCategory] = useState<Category>("all");
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   const filteredImages =
     activeCategory === "all"
@@ -28,6 +31,25 @@ export default function GalleryPage() {
     "lounge",
     "treatment-rooms",
   ];
+
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => setLightboxOpen(false);
+
+  const goToPrev = () => {
+    setLightboxIndex((prev) =>
+      prev === 0 ? filteredImages.length - 1 : prev - 1,
+    );
+  };
+
+  const goToNext = () => {
+    setLightboxIndex((prev) =>
+      prev === filteredImages.length - 1 ? 0 : prev + 1,
+    );
+  };
 
   return (
     <div className="min-h-screen">
@@ -80,7 +102,8 @@ export default function GalleryPage() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className="relative aspect-4/3 rounded-2xl overflow-hidden group"
+                  className="relative aspect-4/3 rounded-2xl overflow-hidden group cursor-pointer"
+                  onClick={() => openLightbox(index)}
                 >
                   <Image
                     src={image.src}
@@ -124,6 +147,16 @@ export default function GalleryPage() {
           </Link>
         </div>
       </section>
+
+      {/* Lightbox */}
+      <Lightbox
+        images={filteredImages}
+        currentIndex={lightboxIndex}
+        isOpen={lightboxOpen}
+        onClose={closeLightbox}
+        onPrev={goToPrev}
+        onNext={goToNext}
+      />
     </div>
   );
 }
