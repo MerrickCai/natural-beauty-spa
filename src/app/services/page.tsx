@@ -10,7 +10,7 @@ import ServiceCard from "@/components/ServiceCard";
 import { serviceCategories } from "@/data/services";
 
 export const metadata: Metadata = {
-  title: "Services | Natural Beauty Spa",
+  title: "Services",
   description:
     "Explore our comprehensive menu of spa treatments including HydraFacial, facial cleansing, body massage, head therapy, and waxing services in Bellevue, WA.",
 };

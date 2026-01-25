@@ -3,7 +3,7 @@ import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
 
 export const metadata: Metadata = {
-  title: "Products | Natural Beauty Spa",
+  title: "Products",
   description:
     "Discover our professional-grade skincare and haircare products used in spa treatments, available for your home care routine.",
 };

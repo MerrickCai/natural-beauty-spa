@@ -9,7 +9,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Book Appointment | Natural Beauty Spa",
+  title: "Book Appointment",
   description:
     "Book your spa appointment online at Natural Beauty Spa in Bellevue, WA. Easy online scheduling for HydraFacial, massages, and skincare treatments.",
 };

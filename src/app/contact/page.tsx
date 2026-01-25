@@ -8,7 +8,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Natural Beauty Spa",
+  title: "Contact Us",
   description:
     "Contact Natural Beauty Spa in Bellevue, WA. Call 425-526-3777 or visit us at 1433 130th Ave NE. Open daily 9:30 AM – 8:00 PM.",
 };

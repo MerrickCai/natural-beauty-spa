@@ -4,6 +4,7 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
+import { siteConfig } from "@/data/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,9 +17,36 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Natural Beauty Spa | Bellevue's Premier Spa Experience",
-  description:
-    "Experience luxury spa treatments including HydraFacial, facial cleansing, body massage, and more at Natural Beauty Spa in Bellevue, WA.",
+  title: {
+    default: `${siteConfig.name} | ${siteConfig.tagline}`,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  keywords: [
+    "spa",
+    "beauty spa",
+    "hydrafacial",
+    "facial",
+    "massage",
+    "skincare",
+    "bellevue spa",
+    "natural beauty",
+    "wellness",
+    "relaxation",
+  ],
+  authors: [{ name: siteConfig.name }],
+  openGraph: {
+    title: `${siteConfig.name} | ${siteConfig.tagline}`,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    locale: "en_US",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

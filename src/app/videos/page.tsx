@@ -5,7 +5,7 @@ import VideoCard from "@/components/VideoCard";
 import { videos } from "@/data/videos";
 
 export const metadata: Metadata = {
-  title: "Videos | Natural Beauty Spa",
+  title: "Videos",
   description:
     "Watch our spa treatment videos and get a preview of the relaxing, rejuvenating experiences we offer at Natural Beauty Spa.",
 };
