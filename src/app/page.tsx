@@ -12,6 +12,7 @@ import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import { products } from "@/data/products";
+import { formatRelativeDate, reviews } from "@/data/reviews";
 import { serviceCategories } from "@/data/services";
 import { siteConfig } from "@/data/site";
 import { blurDataURL } from "@/lib/placeholder";
@@ -265,6 +266,93 @@ export default function Home() {
               View All Products
               <ArrowRightIcon size={20} />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-24 bg-linear-to-br from-primary/5 via-accent/10 to-background">
+        <div className="mx-auto max-w-7xl px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="inline-block mb-4 px-4 py-2 bg-primary/10 text-primary text-sm font-medium rounded-full">
+              What Our Clients Say
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Real Reviews, Real Results
+            </h2>
+            <p className="text-muted max-w-2xl mx-auto">
+              Don't just take our word for it — hear from our valued clients
+              about their experiences.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {reviews.slice(0, 6).map((review, i) => (
+              <motion.div
+                key={review.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-white p-6 rounded-2xl border border-border hover-lift"
+              >
+                <div className="flex items-center gap-1 mb-3">
+                  {Array.from({ length: review.rating }).map((_, idx) => (
+                    <StarIcon
+                      key={`star-${review.id}-${idx}`}
+                      size={18}
+                      weight="fill"
+                      className="text-yellow-400"
+                    />
+                  ))}
+                </div>
+                <p className="text-foreground text-sm leading-relaxed mb-4 line-clamp-4">
+                  "{review.content}"
+                </p>
+                {review.services && review.services.length > 0 && (
+                  <div className="flex flex-wrap gap-1.5 mb-3">
+                    {review.services.map((service) => (
+                      <span
+                        key={service}
+                        className="text-xs bg-accent/20 text-primary px-2 py-0.5 rounded-full"
+                      >
+                        {service}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="font-semibold text-sm">{review.name}</p>
+                    <p className="text-muted text-xs">
+                      {formatRelativeDate(review.createdAt)}
+                    </p>
+                  </div>
+                  {review.priceAssessment && (
+                    <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">
+                      {review.priceAssessment}
+                    </span>
+                  )}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <a
+              href={siteConfig.googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all"
+            >
+              Read More Reviews on Google
+              <ArrowRightIcon size={20} />
+            </a>
           </div>
         </div>
       </section>
