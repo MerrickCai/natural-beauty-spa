@@ -1,6 +1,13 @@
 "use client";
 
-import { ArrowRightIcon, CheckCircleIcon, FlowerIcon, HeartIcon, SparkleIcon, StarIcon } from "@phosphor-icons/react";
+import {
+  ArrowRightIcon,
+  CheckCircleIcon,
+  FlowerIcon,
+  HeartIcon,
+  SparkleIcon,
+  StarIcon,
+} from "@phosphor-icons/react";
 import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,26 +18,32 @@ const features = [
   {
     icon: SparkleIcon,
     title: "Premium Products",
-    description: "We use only the finest skincare products from renowned brands like Cellcosmet and Janssen.",
+    description:
+      "We use only the finest skincare products from renowned brands like Cellcosmet and Janssen.",
   },
   {
     icon: FlowerIcon,
     title: "Expert Therapists",
-    description: "Our certified professionals bring years of experience and genuine care to every treatment.",
+    description:
+      "Our certified professionals bring years of experience and genuine care to every treatment.",
   },
   {
     icon: HeartIcon,
     title: "Personalized Care",
-    description: "Every treatment is customized to your unique skin type and wellness goals.",
+    description:
+      "Every treatment is customized to your unique skin type and wellness goals.",
   },
   {
     icon: StarIcon,
     title: "Serene Environment",
-    description: "Escape the everyday in our tranquil, beautifully designed spa sanctuary.",
+    description:
+      "Escape the everyday in our tranquil, beautifully designed spa sanctuary.",
   },
 ];
 
-const popularServices = serviceCategories.flatMap((cat) => cat.items).slice(0, 4);
+const popularServices = serviceCategories
+  .flatMap((cat) => cat.items)
+  .slice(0, 4);
 const featuredProducts = products.slice(0, 3);
 
 export default function Home() {
@@ -44,7 +57,11 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 mx-auto max-w-7xl px-6 py-24 text-center">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
             <Image
               src="/logos/Natural Beauty Spa Logo.svg"
               alt="Natural Beauty Spa"
@@ -62,8 +79,8 @@ export default function Home() {
               <span className="text-foreground">Natural Radiance</span>
             </h1>
             <p className="max-w-2xl mx-auto text-lg md:text-xl text-muted mb-10 leading-relaxed">
-              Indulge in transformative spa experiences that nurture your body, refresh your mind, and reveal your
-              natural beauty.
+              Indulge in transformative spa experiences that nurture your body,
+              refresh your mind, and reveal your natural beauty.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -93,9 +110,12 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose Us</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Why Choose Us
+            </h2>
             <p className="text-muted max-w-2xl mx-auto">
-              At Natural Beauty Spa, we combine expertise with elegance to deliver unparalleled spa experiences.
+              At Natural Beauty Spa, we combine expertise with elegance to
+              deliver unparalleled spa experiences.
             </p>
           </motion.div>
 
@@ -110,10 +130,16 @@ export default function Home() {
                 className="p-8 rounded-2xl bg-linear-to-br from-primary/5 to-transparent border border-border hover-lift"
               >
                 <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
-                  <feature.icon size={28} weight="duotone" className="text-primary" />
+                  <feature.icon
+                    size={28}
+                    weight="duotone"
+                    className="text-primary"
+                  />
                 </div>
                 <h3 className="text-lg font-semibold mb-3">{feature.title}</h3>
-                <p className="text-muted text-sm leading-relaxed">{feature.description}</p>
+                <p className="text-muted text-sm leading-relaxed">
+                  {feature.description}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -129,9 +155,12 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Popular Treatments</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Popular Treatments
+            </h2>
             <p className="text-muted max-w-2xl mx-auto">
-              Our most loved services, trusted by hundreds of clients for their transformative results.
+              Our most loved services, trusted by hundreds of clients for their
+              transformative results.
             </p>
           </motion.div>
 
@@ -147,10 +176,14 @@ export default function Home() {
               >
                 <div className="flex items-center gap-2 text-primary mb-4">
                   <CheckCircleIcon size={20} weight="fill" />
-                  <span className="text-sm font-medium">{service.duration}</span>
+                  <span className="text-sm font-medium">
+                    {service.duration}
+                  </span>
                 </div>
                 <h3 className="text-lg font-semibold mb-2">{service.name}</h3>
-                <p className="text-2xl font-bold text-primary">{service.price}</p>
+                <p className="text-2xl font-bold text-primary">
+                  {service.price}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -176,9 +209,12 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Products</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Featured Products
+            </h2>
             <p className="text-muted max-w-2xl mx-auto">
-              Professional-grade products used in our treatments, available for your home care routine.
+              Professional-grade products used in our treatments, available for
+              your home care routine.
             </p>
           </motion.div>
 
@@ -208,7 +244,9 @@ export default function Home() {
                     <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">
                       {product.productName}
                     </h3>
-                    <p className="text-muted text-sm line-clamp-2">{product.heroOneLiner}</p>
+                    <p className="text-muted text-sm line-clamp-2">
+                      {product.heroOneLiner}
+                    </p>
                   </div>
                 </Link>
               </motion.div>
@@ -230,10 +268,17 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-24 bg-primary">
         <div className="mx-auto max-w-4xl px-6 text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Transform Your Day?</h2>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Ready to Transform Your Day?
+            </h2>
             <p className="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
-              Book your appointment today and step into a world of relaxation, rejuvenation, and natural beauty.
+              Book your appointment today and step into a world of relaxation,
+              rejuvenation, and natural beauty.
             </p>
             <Link
               href="/booking"
