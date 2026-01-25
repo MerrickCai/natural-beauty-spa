@@ -8,6 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProductBySlug, products } from "@/data/products";
+import { blurDataURL } from "@/lib/placeholder";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -67,6 +68,8 @@ export default async function ProductDetailPage({ params }: Props) {
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
+                placeholder="blur"
+                blurDataURL={blurDataURL}
               />
             </div>
 

@@ -10,6 +10,7 @@ import {
   type GalleryImage,
   galleryImages,
 } from "@/data/gallery";
+import { blurDataURL } from "@/lib/placeholder";
 
 type Category = GalleryImage["category"] | "all";
 
@@ -87,6 +88,8 @@ export default function GalleryPage() {
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    placeholder="blur"
+                    blurDataURL={blurDataURL}
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                     <div className="absolute bottom-4 left-4 right-4">

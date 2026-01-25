@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import type { Product } from "@/data/products";
+import { blurDataURL } from "@/lib/placeholder";
 
 export default function ProductCard({ product }: { product: Product }) {
   return (
@@ -25,6 +26,8 @@ export default function ProductCard({ product }: { product: Product }) {
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-500"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            placeholder="blur"
+            blurDataURL={blurDataURL}
           />
         </div>
         <div className="p-6">
