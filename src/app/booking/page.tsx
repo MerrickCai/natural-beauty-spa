@@ -7,6 +7,7 @@ import {
 } from "@phosphor-icons/react/dist/ssr";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Book Appointment",
@@ -78,7 +79,7 @@ export default function BookingPage() {
 
             <div className="p-8 md:p-12 text-center">
               <a
-                href="https://www.fresha.com/a/natural-beauty-spa-bellevue-1433-130th-avenue-northeast-cfvhze0h/booking?allOffer=true&pId=2731175&cartId=b561da87-f6e0-443f-902f-670455d509ed"
+                href={siteConfig.booking}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 bg-primary text-white px-10 py-5 rounded-full text-lg font-semibold hover:bg-primary-light transition-all hover-lift"
@@ -90,11 +91,13 @@ export default function BookingPage() {
               <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-6 text-muted">
                 <div className="flex items-center gap-2">
                   <ClockIcon size={20} className="text-primary" />
-                  <span>Open 9:30 AM – 8:00 PM</span>
+                  <span>
+                    {siteConfig.hoursNote} {siteConfig.hours}
+                  </span>
                 </div>
                 <div className="flex items-center gap-2">
                   <PhoneIcon size={20} className="text-primary" />
-                  <span>425-526-3777</span>
+                  <span>{siteConfig.phone}</span>
                 </div>
               </div>
 

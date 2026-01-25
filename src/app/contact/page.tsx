@@ -1,37 +1,45 @@
 import {
   ClockIcon,
+  EnvelopeIcon,
   MapPinIcon,
   NavigationArrowIcon,
   PhoneIcon,
 } from "@phosphor-icons/react/dist/ssr";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  description:
-    "Contact Natural Beauty Spa in Bellevue, WA. Call 425-526-3777 or visit us at 1433 130th Ave NE. Open daily 9:30 AM – 8:00 PM.",
+  description: `Contact Natural Beauty Spa in Bellevue, WA. Call ${siteConfig.phone} or visit us at ${siteConfig.address}. ${siteConfig.hoursNote} ${siteConfig.hours}.`,
 };
 
 const contactInfo = [
   {
     icon: PhoneIcon,
     title: "Phone",
-    content: "425-526-3777",
-    href: "tel:425-526-3777",
+    content: siteConfig.phone,
+    href: `tel:${siteConfig.phone}`,
     action: "Call Now",
+  },
+  {
+    icon: EnvelopeIcon,
+    title: "Email",
+    content: siteConfig.email,
+    href: `mailto:${siteConfig.email}`,
+    action: "Send Email",
   },
   {
     icon: MapPinIcon,
     title: "Address",
-    content: "1433 130th Ave NE, Bellevue, WA 98005",
-    href: "https://maps.google.com/?q=1433+130th+Ave+NE,+Bellevue,+WA+98005",
+    content: siteConfig.address,
+    href: siteConfig.googleMapsUrl,
     action: "Get Directions",
   },
   {
     icon: ClockIcon,
     title: "Business Hours",
-    content: "9:30 AM – 8:00 PM Daily",
+    content: `${siteConfig.hours} ${siteConfig.hoursNote}`,
     href: null,
     action: null,
   },
@@ -54,7 +62,7 @@ export default function ContactPage() {
       {/* Contact Cards */}
       <section className="py-16">
         <div className="mx-auto max-w-5xl px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {contactInfo.map((item) => (
               <div
                 key={item.title}
@@ -99,7 +107,7 @@ export default function ContactPage() {
 
           <div className="rounded-2xl overflow-hidden border border-border">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10756.905099105446!2d-122.18305072974243!3d47.621732650000105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906d65bd01c2d7%3A0xd67fcb221432b50f!2sNatural%20Beauty%20Spa!5e0!3m2!1sen!2sus!4v1769320078526!5m2!1sen!2sus"
+              src={siteConfig.googleMapsEmbed}
               width="100%"
               height="450"
               style={{ border: 0 }}
