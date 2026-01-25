@@ -343,7 +343,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12">
             <a
               href={siteConfig.googleMapsUrl}
               target="_blank"
@@ -352,6 +352,15 @@ export default function Home() {
             >
               Read More Reviews on Google
               <ArrowRightIcon size={20} />
+            </a>
+            <a
+              href={siteConfig.googleReviewUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-medium rounded-full hover:bg-primary/90 transition-colors"
+            >
+              <StarIcon size={20} weight="fill" />
+              Write a Review
             </a>
           </div>
         </div>
