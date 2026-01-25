@@ -13,6 +13,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { products } from "@/data/products";
 import { serviceCategories } from "@/data/services";
+import { blurDataURL } from "@/lib/placeholder";
 
 const features = [
   {
@@ -238,6 +239,8 @@ export default function Home() {
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                       sizes="(max-width: 768px) 100vw, 33vw"
+                      placeholder="blur"
+                      blurDataURL={blurDataURL}
                     />
                   </div>
                   <div className="p-6">
