@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Natural Beauty Spa
+
+A modern, responsive website for Natural Beauty Spa — Bellevue's premier spa experience.
+
+## Tech Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **UI**: React 19, Tailwind CSS 4
+- **Icons**: Phosphor Icons
+- **Animations**: Motion (Framer Motion)
+- **Analytics**: Vercel Analytics
+- **Language**: TypeScript
+
+## Features
+
+- 🏠 **Home** - Hero, promotions, features, services preview, products, testimonials
+- 💆 **Services** - HydraFacial, facial cleansing, body massage, head therapy, waxing
+- 🛍️ **Products** - Skincare products with detailed pages
+- 🖼️ **Gallery** - Photo gallery with lightbox
+- 🎬 **Videos** - Video gallery
+- 📅 **Booking** - Square appointment integration
+- 🎁 **Gift Cards** - Square gift card integration
+- 📞 **Contact** - Contact info with Google Maps
+- ℹ️ **About** - Spa story and team
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/           # Pages (App Router)
+├── components/    # Reusable components
+├── data/          # Data files (services, products, reviews, etc.)
+└── lib/           # Utilities
 
-## Learn More
+public/
+├── gallery/       # Gallery images
+├── logos/         # Logo files
+├── products/      # Product images
+├── promotions/    # Promotion banners
+└── videos/        # Video thumbnails
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Data Files
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `site.ts` - Site configuration (contact, social, booking links)
+- `services.ts` - Service categories and items
+- `products.ts` - Product listings
+- `reviews.ts` - Customer reviews
+- `promotions.ts` - Current promotions
+- `gallery.ts` - Gallery images
+- `videos.ts` - Video listings
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deploy on [Vercel](https://vercel.com) for best performance with Next.js.
