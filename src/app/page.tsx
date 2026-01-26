@@ -12,6 +12,7 @@ import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import { products } from "@/data/products";
+import { promotions } from "@/data/promotions";
 import { formatRelativeDate, reviews } from "@/data/reviews";
 import { serviceCategories } from "@/data/services";
 import { siteConfig } from "@/data/site";
@@ -103,6 +104,46 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      {/* Promotions Section */}
+      {promotions.length > 0 && (
+        <section className="py-12 bg-accent/10">
+          <div className="mx-auto max-w-5xl px-6">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-2xl md:text-3xl font-bold text-center mb-8"
+            >
+              Special Offers
+            </motion.h2>
+
+            <div
+              className={`grid gap-4 ${promotions.length === 1 ? "max-w-lg mx-auto" : promotions.length === 2 ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"}`}
+            >
+              {promotions.map((promo, i) => (
+                <motion.div
+                  key={promo.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="group overflow-hidden rounded-xl bg-white border border-border hover-lift"
+                >
+                  <div className="aspect-[4/3] relative">
+                    <Image
+                      src={promo.image}
+                      alt={promo.alt}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Features Section */}
       <section className="py-24 bg-white">
