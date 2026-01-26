@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useCallback } from "react";
+import { CaretLeftIcon, CaretRightIcon, XIcon } from "@phosphor-icons/react";
+import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "motion/react";
-import { XIcon, CaretLeftIcon, CaretRightIcon } from "@phosphor-icons/react";
+import { useCallback, useEffect } from "react";
 import { blurDataURL } from "@/lib/placeholder";
 
 interface LightboxProps {

@@ -5,13 +5,13 @@ import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import Lightbox from "@/components/Lightbox";
 import {
   categoryLabels,
   type GalleryImage,
   galleryImages,
 } from "@/data/gallery";
 import { blurDataURL } from "@/lib/placeholder";
-import Lightbox from "@/components/Lightbox";
 
 type Category = GalleryImage["category"] | "all";
 

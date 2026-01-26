@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
 import {
+  ArrowRightIcon,
   GiftIcon,
   HeartIcon,
   SparkleIcon,
-  ArrowRightIcon,
 } from "@phosphor-icons/react/dist/ssr";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { siteConfig } from "@/data/site";
 

@@ -1,16 +1,15 @@
+import {
+  ArrowRightIcon,
+  HeartIcon,
+  LeafIcon,
+  ShieldCheckIcon,
+  SparkleIcon,
+  StarIcon,
+  UsersIcon,
+} from "@phosphor-icons/react/dist/ssr";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowRightIcon,
-  SparkleIcon,
-  HeartIcon,
-  LeafIcon,
-  StarIcon,
-  UsersIcon,
-  ShieldCheckIcon,
-} from "@phosphor-icons/react/dist/ssr";
-import { siteConfig } from "@/data/site";
 import { blurDataURL } from "@/lib/placeholder";
 
 export const metadata: Metadata = {

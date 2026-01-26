@@ -1,4 +1,4 @@
-import { HouseIcon, ArrowLeftIcon } from "@phosphor-icons/react/dist/ssr";
+import { ArrowLeftIcon, HouseIcon } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 
 export default function NotFound() {
