@@ -17,9 +17,8 @@ export const siteConfig = {
 
   // External Links
   booking:
-    "https://www.fresha.com/a/natural-beauty-spa-bellevue-1433-130th-avenue-northeast-cfvhze0h/booking?allOffer=true&pId=2731175&cartId=b561da87-f6e0-443f-902f-670455d509ed",
-  giftCard:
-    "https://www.fresha.com/a/natural-beauty-spa-bellevue-1433-130th-avenue-northeast-cfvhze0h/gift-cards",
+    "https://app.squareup.com/appointments/book/srhrxz4tf86o2h/LR74321QV6Y6M/start",
+  giftCard: "https://app.squareup.com/gift/MLTZGD1G9Q603/order",
 
   // Social
   instagram: "https://www.instagram.com/naturalbeauty42780/",
