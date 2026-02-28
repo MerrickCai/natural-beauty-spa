@@ -49,6 +49,9 @@ const popularServices = serviceCategories
   .flatMap((cat) => cat.items)
   .slice(0, 4);
 const featuredProducts = products.slice(0, 3);
+const hasPortraitPromotion = promotions.some(
+  (promotion) => promotion.displayMode === "portrait",
+);
 
 export default function Home() {
   return (
@@ -119,27 +122,38 @@ export default function Home() {
             </motion.h2>
 
             <div
-              className={`grid gap-4 ${promotions.length === 1 ? "max-w-lg mx-auto" : promotions.length === 2 ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"}`}
+              className={`grid gap-4 ${promotions.length === 1 ? `${hasPortraitPromotion ? "max-w-md" : "max-w-lg"} mx-auto` : promotions.length === 2 ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"}`}
             >
-              {promotions.map((promo, i) => (
-                <motion.div
-                  key={promo.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="group overflow-hidden rounded-xl bg-white border border-border hover-lift"
-                >
-                  <div className="aspect-[4/3] relative">
-                    <Image
-                      src={promo.image}
-                      alt={promo.alt}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                </motion.div>
-              ))}
+              {promotions.map((promo, i) => {
+                const isPortrait = promo.displayMode === "portrait";
+
+                return (
+                  <motion.div
+                    key={promo.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="group overflow-hidden rounded-xl bg-white border border-border hover-lift"
+                  >
+                    <div
+                      className={`relative bg-accent/10 ${isPortrait ? "aspect-3/4 sm:aspect-4/5" : "aspect-4/3"}`}
+                    >
+                      <Image
+                        src={promo.image}
+                        alt={promo.alt}
+                        fill
+                        sizes={
+                          isPortrait
+                            ? "(max-width: 768px) 100vw, 420px"
+                            : "(max-width: 768px) 100vw, 50vw"
+                        }
+                        className={`${isPortrait ? "object-contain p-2" : "object-cover"} group-hover:scale-105 transition-transform duration-500`}
+                      />
+                    </div>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </section>
