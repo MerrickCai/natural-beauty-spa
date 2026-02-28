@@ -131,7 +131,7 @@ export const serviceCategories: ServiceCategory[] = [
       },
       {
         name: "Body Massage",
-        duration: "120 min",
+        duration: "90 min",
         price: "$120",
         description:
           "The ultimate indulgence for complete body renewal. This extended session allows for thorough attention to every muscle group, deeper pressure work, and a truly transformative relaxation experience.",
